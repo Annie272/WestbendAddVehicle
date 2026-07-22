@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>WestBend Form</title>
+    <title>West Bend Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css" />
     <style>
@@ -58,7 +58,7 @@
       ></textarea>
 
       <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">
-        Add Vehicle WestBend Form
+        Add Vehicle West Bend Form
       </h2>
 
       <section class="bg-gray-50 border rounded-xl p-6 shadow-inner" aria-label="Policy Changes Section">
@@ -138,7 +138,7 @@
           <input
             type="text"
             id="00NU7000007EGYk"
-            name="00NU7000007EGYk"
+            name="Vehicle_Year__c"
             maxlength="30"
             placeholder="YYYY"
             class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 year-input"
@@ -154,7 +154,7 @@
           <input
             type="text"
             id="00NU7000006Knh3"
-            name="00NU7000006Knh3"
+            name="VIN_number_2__c"
             maxlength="255"
             class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
             autocomplete="off"
@@ -175,7 +175,7 @@
                 <input type="radio" name="vehicleBusinessRadios" value="N" class="mr-2" required />No
               </label>
             </div>
-            <select id="00NU7000009O2Uv" name="00NU7000009O2Uv" class="hidden" required>
+            <select id="00NU7000009O2Uv" name="Is_the_vehicle_used_for_business__c" class="hidden" required>
               <option value=""></option>
               <option value="Y">Y</option>
               <option value="N">N</option>
@@ -196,7 +196,7 @@
                 <input type="radio" name="acquireVehicleRadios" value="N" class="mr-2" required />No
               </label>
             </div>
-            <select id="00NU7000009O4V7" name="00NU7000009O4V7" class="hidden" required>
+            <select id="00NU7000009O4V7" name="Did_the_client_acquire_vehicle__c" class="hidden" required>
               <option value=""></option>
               <option value="Y">Y</option>
               <option value="N">N</option>
@@ -217,7 +217,7 @@
                 <input type="radio" name="arizonaGarageRadios" value="N" class="mr-2" required />No
               </label>
             </div>
-            <select id="00NU7000009O2zZ" name="00NU7000009O2zZ" class="hidden" required>
+            <select id="00NU7000009O2zZ" name="Is_this_vehicle_garaged_at_Arizona_Add__c" class="hidden" required>
               <option value=""></option>
               <option value="Y">Y</option>
               <option value="N">N</option>
@@ -235,7 +235,7 @@
           </label>
           <select
             id="00NU7000007ALC1"
-            name="00NU7000007ALC1"
+            name="Other_than_Collision__c"
             class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="">--None--</option>
@@ -249,29 +249,29 @@
           </select>
         </div>
 
-       <div class="mb-4">
-  <fieldset>
-    <legend class="block text-sm font-medium text-gray-700 mb-1">
-      Full Coverage Glass<span class="star">*</span>
-    </legend>
-    <div class="flex space-x-6">
-      <label class="inline-flex items-center">
-        <input type="radio" name="fullCoverageGlassRadios" value="Y" class="mr-2" required />Yes
-      </label>
-      <label class="inline-flex items-center">
-        <input type="radio" name="fullCoverageGlassRadios" value="N" class="mr-2" required />No
-      </label>
-    </div>
-    <select id="fullCoverageGlassHidden" name="fullCoverageGlass" class="hidden" required>
-      <option value=""></option>
-      <option value="Y">Y</option>
-      <option value="N">N</option>
-    </select>
-    <div class="disclaimer-box hidden" id="fullCoverageGlassDisclaimer">
-      Full Coverage Glass is required when Other than Collision Deductible is selected.
-    </div>
-  </fieldset>
-</div>
+        <div class="mb-4">
+          <fieldset>
+            <legend class="block text-sm font-medium text-gray-700 mb-1">
+              Full Coverage Glass<span class="star">*</span>
+            </legend>
+            <div class="flex space-x-6">
+              <label class="inline-flex items-center">
+                <input type="radio" name="fullCoverageGlassRadios" value="Y" class="mr-2" required />Yes
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" name="fullCoverageGlassRadios" value="N" class="mr-2" required />No
+              </label>
+            </div>
+            <select id="fullCoverageGlassHidden" name="Full_Safety_Glass__c" class="hidden" required>
+              <option value=""></option>
+              <option value="Y">Y</option>
+              <option value="N">N</option>
+            </select>
+            <div class="disclaimer-box hidden" id="fullCoverageGlassDisclaimer">
+              Full Coverage Glass is required when Other than Collision Deductible is selected.
+            </div>
+          </fieldset>
+        </div>
 
         <div class="mb-4">
           <label for="00NU7000006Ne7l" class="block text-sm font-medium text-gray-700">
@@ -279,7 +279,7 @@
           </label>
           <select
             id="00NU7000006Ne7l"
-            name="00NU7000006Ne7l"
+            name="Collision_Deductible__c"
             class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="">--None--</option>
@@ -306,7 +306,7 @@
                 <input type="radio" name="autoLoanLeaseRadios" value="N" class="mr-2" required />No
               </label>
             </div>
-            <select id="00NU7000006Nf8f" name="00NU7000006Nf8f" class="hidden" required>
+            <select id="00NU7000006Nf8f" name="Auto_Loan_Lease_Coverage__c" class="hidden" required>
               <option value=""></option>
               <option value="Y">Y</option>
               <option value="N">N</option>
@@ -323,7 +323,7 @@
           </label>
           <select
             id="00NU7000008Adt7"
-            name="00NU7000008Adt7"
+            name="Transportation_Expense__c"
             class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="">--None--</option>
@@ -350,7 +350,7 @@
                 <input type="radio" name="customEquipmentRadios" value="N" class="mr-2" required />No
               </label>
             </div>
-            <select id="00NU7000009NNA1" name="00NU7000009NNA1" class="hidden" required>
+            <select id="00NU7000009NNA1" name="Custom_Equipment_caps_covers_bedliners__c" class="hidden" required>
               <option value=""></option>
               <option value="Y">Y</option>
               <option value="N">N</option>
@@ -383,28 +383,246 @@
                 <input type="radio" name="enhancedLossSettlementRadios" value="N" class="mr-2" />No
               </label>
             </div>
-            <select id="00NU7000009NOis" name="00NU7000009NOis" class="hidden">
+            <select id="00NU7000009NOis" name="Car_Damage_Enhanced_Loss_Settlement__c" class="hidden">
               <option value=""></option>
               <option value="Y">Y</option>
               <option value="N">N</option>
             </select>
           </fieldset>
         </div>
-      </section>
+
+        <div class="mb-4">
+  <fieldset>
+    <legend class="block text-sm font-medium text-gray-700 mb-1">
+      Is this vehicle leased?<span class="star">*</span>
+    </legend>
+    <div class="flex space-x-6">
+      <label class="inline-flex items-center">
+        <input type="radio" name="vehicleLeasedRadios" value="Y" class="mr-2" required />Yes
+      </label>
+      <label class="inline-flex items-center">
+        <input type="radio" name="vehicleLeasedRadios" value="N" class="mr-2" required />No
+      </label>
+    </div>
+    <select id="00NU7000007AxFi" name="Is_this_vehicle_leased__c" title="Is this vehicle leased?" class="hidden" required>
+      <option value=""></option>
+      <option value="Y">Y</option>
+      <option value="N">N</option>
+    </select>
+  </fieldset>
+</div>
+  </section>
+
+      <section class="bg-gray-50 border rounded-xl p-6 shadow-inner hidden" id="leaseDetailsSection" aria-label="Additional Questions Section">
+  <h3 class="text-xl font-semibold mb-4 text-gray-700">Proceed to Additional Questions Section</h3>
+
+  <div class="mb-4">
+    <label for="00NU7000009O5B3" class="block text-sm font-medium text-gray-700">
+      Vehicle is titled in the name of<span class="star">*</span>
+    </label>
+    <input id="00NU7000009O5B3" maxlength="50" name="Vehicle_is_titled_in_the_name_of__c" size="20" type="text"
+      class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+  </div>
+
+  <div class="mb-4">
+  <label for="00NU7000009O5Cf" class="block text-sm font-medium text-gray-700">
+    What date was the vehicle Leased/Financed to insured?<span class="star">*</span>
+  </label>
+
+  <input
+    type="text"
+    id="00NU7000009O5Cf"
+    name="vehicle_Leased_Financed_Date__c"
+    placeholder="MM/DD/YYYY"
+    maxlength="10"
+    class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 date-input"
+    autocomplete="off"
+  />
+</div>
+
+  <div class="mb-4">
+    <fieldset>
+      <legend class="block text-sm font-medium text-gray-700 mb-1">
+        Does the vehicle loan or lease contain any type of carry-over balance from a previous loan or lease?<span class="star">*</span>
+      </legend>
+      <div class="flex space-x-6">
+        <label class="inline-flex items-center">
+          <input type="radio" name="previousLoanCarryOverRadios" value="Y" class="mr-2" required />Yes
+        </label>
+        <label class="inline-flex items-center">
+          <input type="radio" name="previousLoanCarryOverRadios" value="N" class="mr-2" required />No
+        </label>
+      </div>
+      <select id="00NU7000009O5Ft" name="PreviousLoanCarryOver__c" title="PreviousLoanCarryOver" class="hidden" required>
+        <option value=""></option>
+        <option value="Y">Y</option>
+        <option value="N">N</option>
+      </select>
+    </fieldset>
+  </div>
+
+  <div class="mb-4">
+    <fieldset>
+      <legend class="block text-sm font-medium text-gray-700 mb-1">
+        Did the prior auto carrier provide Loan/Lease Coverage on this vehicle ?<span class="star">*</span>
+      </legend>
+      <div class="flex space-x-6">
+        <label class="inline-flex items-center">
+          <input type="radio" name="priorCarrierProvidedLoanRadios" value="Y" class="mr-2" required />Yes
+        </label>
+        <label class="inline-flex items-center">
+          <input type="radio" name="priorCarrierProvidedLoanRadios" value="N" class="mr-2" required />No
+        </label>
+      </div>
+      <select id="00NU7000009O5Nx" name="PriorCarrierProvidedLoan__c" title="PriorCarrierProvidedLoan" class="hidden" required>
+        <option value=""></option>
+        <option value="Y">Y</option>
+        <option value="N">N</option>
+      </select>
+    </fieldset>
+  </div>
+
+  <div class="mb-4">
+    <label for="00NU7000006OUCn" class="block text-sm font-medium text-gray-700">
+      Interest Type<span class="star">*</span>
+    </label>
+    <select id="00NU7000006OUCn" name="Interest_Type__c" title="Interest Type"
+      class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+      <option value="">--None--</option>
+      <option value="Loss Payee">Loss Payee</option>
+      <option value="Additional Interest">Additional Interest</option>
+      <option value="Leasing Company">Leasing Company</option>
+      <option value="Corporate Owned">Corporate Owned</option>
+      <option value="Additional Insured">Additional Insured</option>
+      <option value="Additional Insured-Lessor">Additional Insured-Lessor</option>
+    </select>
+  </div>
+
+  <div class="mb-4">
+    <label for="00NU70000074ACr" class="block text-sm font-medium text-gray-700">Loan Number</label>
+    <input id="00NU70000074ACr" maxlength="255" name="loanNumber_1__c" size="20" type="text"
+      class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+  </div>
+
+  <div class="mb-4">
+    <label for="00NU70000074A4n" class="block text-sm font-medium text-gray-700">
+      Name 1<span class="star">*</span>
+    </label>
+    <input id="00NU70000074A4n" maxlength="30" name="name_1__c" size="20" type="text"
+      class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" required />
+  </div>
+
+  <div class="mb-4">
+    <label for="00NU70000074APl" class="block text-sm font-medium text-gray-700">Name 2</label>
+    <input id="00NU70000074APl" maxlength="30" name="name_2__c" size="20" type="text"
+      class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+  </div>
+
+  <div class="mb-4">
+    <label for="00NU7000007QpPR" class="block text-sm font-medium text-gray-700">
+      Street Address<span class="star">*</span>
+    </label>
+    <input id="00NU7000007QpPR" maxlength="100" name="Lienholder_Address_1__c" size="20" type="text"
+      class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" required />
+  </div>
+
+  <div class="mb-4">
+    <label for="00NU7000007QpUH" class="block text-sm font-medium text-gray-700">Street Address 2</label>
+    <input id="00NU7000007QpUH" maxlength="100" name="Lienholder_Address_2__c" size="20" type="text"
+      class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+  </div>
+
+  <div class="mb-4">
+    <label for="00NU7000005zvUj" class="block text-sm font-medium text-gray-700">
+      City<span class="star">*</span>
+    </label>
+    <input id="00NU7000005zvUj" maxlength="30" name="City__c" size="20" type="text"
+      class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" required />
+  </div>
+
+  <div class="mb-4">
+    <label for="00NU7000005zvWL" class="block text-sm font-medium text-gray-700">
+      State<span class="star">*</span>
+    </label>
+    <select id="00NU7000005zvWL" name="State__c" title="State"
+      class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+      <option value="">--None--</option>
+      <option value="AL">AL</option>
+      <option value="AK">AK</option>
+      <option value="AZ">AZ</option>
+      <option value="AR">AR</option>
+      <option value="CA">CA</option>
+      <option value="CO">CO</option>
+      <option value="CT">CT</option>
+      <option value="DE">DE</option>
+      <option value="FL">FL</option>
+      <option value="GA">GA</option>
+      <option value="HI">HI</option>
+      <option value="ID">ID</option>
+      <option value="IL">IL</option>
+      <option value="IN">IN</option>
+      <option value="IA">IA</option>
+      <option value="KS">KS</option>
+      <option value="KY">KY</option>
+      <option value="LA">LA</option>
+      <option value="ME">ME</option>
+      <option value="MD">MD</option>
+      <option value="MA">MA</option>
+      <option value="MI">MI</option>
+      <option value="MN">MN</option>
+      <option value="MS">MS</option>
+      <option value="MO">MO</option>
+      <option value="MT">MT</option>
+      <option value="NE">NE</option>
+      <option value="NV">NV</option>
+      <option value="NH">NH</option>
+      <option value="NJ">NJ</option>
+      <option value="NM">NM</option>
+      <option value="NY">NY</option>
+      <option value="NC">NC</option>
+      <option value="ND">ND</option>
+      <option value="OH">OH</option>
+      <option value="OK">OK</option>
+      <option value="OR">OR</option>
+      <option value="PA">PA</option>
+      <option value="RI">RI</option>
+      <option value="SC">SC</option>
+      <option value="SD">SD</option>
+      <option value="TN">TN</option>
+      <option value="TX">TX</option>
+      <option value="UT">UT</option>
+      <option value="VT">VT</option>
+      <option value="VA">VA</option>
+      <option value="WA">WA</option>
+      <option value="WV">WV</option>
+      <option value="WI">WI</option>
+      <option value="WY">WY</option>
+      <option value="DC">DC</option>
+    </select>
+  </div>
+
+  <div class="mb-4">
+    <label for="00NU7000006cbfp" class="block text-sm font-medium text-gray-700">
+      ZIP Code<span class="star">*</span>
+    </label>
+    <input id="00NU7000006cbfp" maxlength="30" name="Interest_Zip_Code__c" size="20" type="text"
+      class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" required />
+  </div>
+</section>
 
       <input type="hidden" name="oid" value="00DU7000006EuID" />
       <input type="hidden" name="retURL" value="https://bennettandporter.com/" />
-      <input type="hidden" name="first_name" value="WestBend" />
+      <input type="hidden" name="first_name" value="West Bend" />
       <input type="hidden" name="last_name" value="Add Vehicle" />
       <input type="hidden" name="status" value="New" />
       <input type="hidden" name="phone" value="28138916529" />
       <input type="hidden" name="lead_source" value="Web Form" />
       <input type="hidden" name="delete_Action_Form__c" value="1" />
-      <input type="hidden" id="00NU7000007OdKL" name="Carrier__c" value="WestBend" />
+      <input type="hidden" id="00NU7000007OdKL" name="Carrier__c" value="West Bend" />
       <input type="hidden" name="00NU7000005zuNN" id="Policy_Action__c" value="Add Vehicle" />
       <input type="hidden" name="Form_Captured_Data__c" />
       <input type="hidden" name="Form_Missing_Data__c" />
-      <input type="hidden" name="company" value="WestBend" />
+      <input type="hidden" name="company" value="West Bend" />
 
       <div class="flex justify-end mt-6">
         <button
@@ -444,539 +662,944 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let picker = null;
-        const dateInput = document.getElementById("00NU7000005zuLl");
-        const policyInput = document.getElementById("00NU7000005zuX3");
-        const yearInput = document.getElementById("00NU7000007EGYk");
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let picker = null;
+    const dateInput = document.getElementById("00NU7000005zuLl");
+    const policyInput = document.getElementById("00NU7000005zuX3");
+    const yearInput = document.getElementById("00NU7000007EGYk");
+    const leaseDateInput = document.getElementById("00NU7000009O5Cf");
 
-        if (policyInput) {
-          policyInput.addEventListener("input", function () {
-            const compact = this.value.replace(/\s+/g, "").replace(/[^A-Za-z0-9]/g, "");
-            if (compact.length <= 3) this.value = compact;
-            else this.value = `${compact.slice(0, 3)} ${compact.slice(3)}`;
-          });
-        }
+    // Radios / hidden fields
+    const requestRadios = document.querySelectorAll('input[name="requestTypeRadios"]');
+    const requestHiddenSelect = document.getElementById("00NU7000006IOzh");
 
-        if (window.Pikaday && dateInput) {
-          picker = new Pikaday({
-            field: dateInput,
-            format: "MM/DD/YYYY",
-            toString(date) {
-              const d = String(date.getDate()).padStart(2, "0");
-              const m = String(date.getMonth() + 1).padStart(2, "0");
-              const y = date.getFullYear();
-              return `${m}/${d}/${y}`;
-            },
-            parse(dateString) {
-              if (!dateString) return null;
-              const [m, d, y] = dateString.split("/");
-              return new Date(y, m - 1, d);
-            },
-            onSelect() {
-              dateInput.value = this.toString();
-            },
-            onClose() {
-              if (this.getDate()) dateInput.value = this.toString();
-            }
-          });
-        }
+    const vehicleBusinessRadios = document.querySelectorAll('input[name="vehicleBusinessRadios"]');
+    const vehicleBusinessHidden = document.getElementById("00NU7000009O2Uv");
 
-        if (window.Pikaday && yearInput) {
-          const yearPicker = new Pikaday({
-            field: yearInput,
-            format: "YYYY",
-            minDate: new Date(1900, 0, 1),
-            maxDate: new Date(2100, 11, 31),
-            yearRange: [1900, 2100],
-            toString(date) {
-              return String(date.getFullYear());
-            },
-            parse(dateString) {
-              const year = parseInt(dateString, 10);
-              if (!year || String(year).length !== 4) return null;
-              return new Date(year, 0, 1);
-            },
-            onSelect() {
-              yearInput.value = String(this.getDate().getFullYear()).slice(0, 4);
-            },
-            onOpen() {
-              const current = parseInt(yearInput.value, 10);
-              if (!isNaN(current) && String(current).length === 4) {
-                this.setDate(new Date(current, 0, 1), true);
-              }
-            }
-          });
+    const acquireVehicleRadios = document.querySelectorAll('input[name="acquireVehicleRadios"]');
+    const acquireVehicleHidden = document.getElementById("00NU7000009O4V7");
 
-          yearInput.addEventListener("input", () => {
-            yearInput.value = yearInput.value.replace(/\D/g, "").slice(0, 4);
-          });
-        }
+    const arizonaGarageRadios = document.querySelectorAll('input[name="arizonaGarageRadios"]');
+    const arizonaGarageHidden = document.getElementById("00NU7000009O2zZ");
 
-        const requestRadios = document.querySelectorAll('input[name="requestTypeRadios"]');
-        const requestHiddenSelect = document.getElementById("00NU7000006IOzh");
+    const autoLoanLeaseRadios = document.querySelectorAll('input[name="autoLoanLeaseRadios"]');
+    const autoLoanLeaseHidden = document.getElementById("00NU7000006Nf8f");
 
-        function syncRequestType() {
-          const checkedRadio = document.querySelector('input[name="requestTypeRadios"]:checked');
-          requestHiddenSelect.value = checkedRadio ? checkedRadio.value : "";
-        }
+    const vehicleLeasedRadios = document.querySelectorAll('input[name="vehicleLeasedRadios"]');
+    const vehicleLeasedHidden = document.getElementById("00NU7000007AxFi");
 
-        requestRadios.forEach(radio => radio.addEventListener("change", syncRequestType));
-        syncRequestType();
+    const previousLoanCarryOverRadios = document.querySelectorAll('input[name="previousLoanCarryOverRadios"]');
+    const previousLoanCarryOverHidden = document.getElementById("00NU7000009O5Ft");
 
-        const vehicleBusinessRadios = document.querySelectorAll('input[name="vehicleBusinessRadios"]');
-        const vehicleBusinessHidden = document.getElementById("00NU7000009O2Uv");
+    const priorCarrierProvidedLoanRadios = document.querySelectorAll('input[name="priorCarrierProvidedLoanRadios"]');
+    const priorCarrierProvidedLoanHidden = document.getElementById("00NU7000009O5Nx");
 
-        function syncVehicleBusiness() {
-          const checkedRadio = document.querySelector('input[name="vehicleBusinessRadios"]:checked');
-          vehicleBusinessHidden.value = checkedRadio ? checkedRadio.value : "";
-        }
+    const customEquipmentRadios = document.querySelectorAll('input[name="customEquipmentRadios"]');
+    const customEquipmentHidden = document.getElementById("00NU7000009NNA1");
+    const customEquipmentFields = document.getElementById("customEquipmentFields");
+    const customEquipmentContainer = document.getElementById("customEquipmentContainer");
+    const addCustomEquipmentBtn = document.getElementById("addCustomEquipmentBtn");
 
-        vehicleBusinessRadios.forEach(radio => radio.addEventListener("change", syncVehicleBusiness));
+    const otherThanCollisionSelect = document.getElementById("00NU7000007ALC1");
+    const fullCoverageGlassSection =
+      document.querySelector('input[name="fullCoverageGlassRadios"]').closest(".mb-4");
+    const collisionSection = document.getElementById("00NU7000006Ne7l").closest(".mb-4");
+    const transportationSection = document.getElementById("00NU7000008Adt7").closest(".mb-4");
+    const customEquipmentSection =
+      document.querySelector('input[name="customEquipmentRadios"]').closest(".mb-4");
+    const enhancedLossSection =
+      document.querySelector('input[name="enhancedLossSettlementRadios"]').closest(".mb-4");
+    const vehicleLeaseSection =
+      document.querySelector('input[name="vehicleLeasedRadios"]').closest(".mb-4");
 
-        const acquireVehicleRadios = document.querySelectorAll('input[name="acquireVehicleRadios"]');
-        const acquireVehicleHidden = document.getElementById("00NU7000009O4V7");
+    // Section aliases
+    const fullCoverageGlassField = fullCoverageGlassSection;
+    const collisionDeductibleField = collisionSection;
+    const transportationExpenseField = transportationSection;
+    const customEquipmentField = customEquipmentSection;
+    const enhancedLossField = enhancedLossSection;
+    const vehicleLeasedField = vehicleLeaseSection;
 
-        function syncAcquireVehicle() {
-          const checkedRadio = document.querySelector('input[name="acquireVehicleRadios"]:checked');
-          acquireVehicleHidden.value = checkedRadio ? checkedRadio.value : "";
-        }
+    // Initial state: hide coverage-related sections
+fullCoverageGlassField.classList.add("hidden");
+collisionDeductibleField.classList.add("hidden");
+transportationExpenseField.classList.add("hidden");
+customEquipmentField.classList.add("hidden");
+enhancedLossField.classList.add("hidden");
+vehicleLeasedField.classList.add("hidden");
 
-        acquireVehicleRadios.forEach(radio => radio.addEventListener("change", syncAcquireVehicle));
 
-        const arizonaGarageRadios = document.querySelectorAll('input[name="arizonaGarageRadios"]');
-        const arizonaGarageHidden = document.getElementById("00NU7000009O2zZ");
+    // Individual inputs
+    const collisionDeductible = document.getElementById("00NU7000006Ne7l");
+    const transportationExpense = document.getElementById("00NU7000008Adt7");
 
-        function syncArizonaGarage() {
-          const checkedRadio = document.querySelector('input[name="arizonaGarageRadios"]:checked');
-          arizonaGarageHidden.value = checkedRadio ? checkedRadio.value : "";
-        }
+    // Auto Loan section container
+    const autoLoanLeaseField =
+      document.querySelector('input[name="autoLoanLeaseRadios"]').closest(".mb-4");
 
-        arizonaGarageRadios.forEach(radio => radio.addEventListener("change", syncArizonaGarage));
+    const collisionSelect = document.getElementById("00NU7000006Ne7l");
+    const leaseDetailsSection = document.getElementById("leaseDetailsSection");
 
-        const autoLoanLeaseRadios = document.querySelectorAll('input[name="autoLoanLeaseRadios"]');
-        const autoLoanLeaseHidden = document.getElementById("00NU7000006Nf8f");
+    const fullCoverageGlassRadios = document.querySelectorAll('input[name="fullCoverageGlassRadios"]');
+    const fullCoverageGlassHidden = document.getElementById("fullCoverageGlassHidden");
+    const fullCoverageGlassDisclaimer = document.getElementById("fullCoverageGlassDisclaimer");
 
-        function syncAutoLoanLease() {
-          const checkedRadio = document.querySelector('input[name="autoLoanLeaseRadios"]:checked');
-          autoLoanLeaseHidden.value = checkedRadio ? checkedRadio.value : "";
-        }
+    const enhancedLossSettlementRadios =
+      document.querySelectorAll('input[name="enhancedLossSettlementRadios"]');
+    const enhancedLossSettlementHidden = document.getElementById("00NU7000009NOis");
 
-        autoLoanLeaseRadios.forEach(radio => radio.addEventListener("change", syncAutoLoanLease));
-
-        const customEquipmentRadios = document.querySelectorAll('input[name="customEquipmentRadios"]');
-        const customEquipmentHidden = document.getElementById("00NU7000009NNA1");
-        const customEquipmentFields = document.getElementById("customEquipmentFields");
-        const customEquipmentContainer = document.getElementById("customEquipmentContainer");
-        const addCustomEquipmentBtn = document.getElementById("addCustomEquipmentBtn");
-
-        let customEquipmentCount = 0;
-        const MAX_CUSTOM_EQUIPMENT = 4;
-
-        function syncCustomEquipment() {
-          const checkedRadio = document.querySelector('input[name="customEquipmentRadios"]:checked');
-          customEquipmentHidden.value = checkedRadio ? checkedRadio.value : "";
-          
-          if (checkedRadio && checkedRadio.value === "Y") {
-            customEquipmentFields.classList.remove("hidden");
-            if (customEquipmentCount === 0) {
-              addCustomEquipmentGroup();
-            }
-          } else {
-            customEquipmentFields.classList.add("hidden");
-            customEquipmentContainer.innerHTML = "";
-            customEquipmentCount = 0;
-          }
-        }
-
-        function addCustomEquipmentGroup() {
-          if (customEquipmentCount >= MAX_CUSTOM_EQUIPMENT) return;
-          
-          customEquipmentCount++;
-          const index = customEquipmentCount;
-          
-          const groupDiv = document.createElement("div");
-          groupDiv.className = "custom-equipment-group";
-          groupDiv.id = `customEquipmentGroup_${index}`;
-          
-          groupDiv.innerHTML = `
-            <h4>Custom Equipment ${index}</h4>
-            <div class="mb-4">
-              <label for="value_${index}" class="block text-sm font-medium text-gray-700">
-                Value of the custom equipment<span class="star">*</span>
-              </label>
-              <input
-                type="text"
-                id="value_${index}"
-                name="value_${index}"
-                data-sf-field="00NU7000009NOyv"
-                data-index="${index}"
-                maxlength="50"
-                class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 custom-equipment-value"
-                autocomplete="off"
-                ${index === 1 ? "required" : ""}
-              />
-            </div>
-            <div class="mb-4">
-              <label for="description_${index}" class="block text-sm font-medium text-gray-700">
-                Description of the custom equipment<span class="star">*</span>
-              </label>
-              <input
-                type="text"
-                id="description_${index}"
-                name="description_${index}"
-                data-sf-field="00NU7000009NQ6H"
-                data-index="${index}"
-                maxlength="50"
-                class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 custom-equipment-description"
-                autocomplete="off"
-                ${index === 1 ? "required" : ""}
-              />
-            </div>
-            <div class="mb-4">
-              <fieldset>
-                <legend class="block text-sm font-medium text-gray-700 mb-1">
-                  Was the custom equipment installed by the Original Equipment Manufacturer (OEM)?<span class="star">*</span>
-                </legend>
-                <div class="flex space-x-6">
-                  <label class="inline-flex items-center">
-                    <input type="radio" name="oem_installed_${index}" value="Y" class="mr-2" ${index === 1 ? "required" : ""} />Yes
-                  </label>
-                  <label class="inline-flex items-center">
-                    <input type="radio" name="oem_installed_${index}" value="N" class="mr-2" ${index === 1 ? "required" : ""} />No
-                  </label>
-                </div>
-                <select class="hidden oem-installed-select" data-index="${index}">
-                  <option value=""></option>
-                  <option value="Y">Y</option>
-                  <option value="N">N</option>
-                </select>
-              </fieldset>
-            </div>
-          `;
-          
-          customEquipmentContainer.appendChild(groupDiv);
-          
-          const oemRadios = groupDiv.querySelectorAll('input[name^="oem_installed_"]');
-          const oemSelect = groupDiv.querySelector(".oem-installed-select");
-          
-          oemRadios.forEach(radio => {
-            radio.addEventListener("change", () => {
-              const checked = groupDiv.querySelector('input[name^="oem_installed_"]:checked');
-              oemSelect.value = checked ? checked.value : "";
-            });
-          });
-          
-          if (customEquipmentCount >= MAX_CUSTOM_EQUIPMENT) {
-            addCustomEquipmentBtn.classList.add("hidden");
-          }
-        }
-
-        addCustomEquipmentBtn.addEventListener("click", addCustomEquipmentGroup);
-
-        customEquipmentRadios.forEach(radio => radio.addEventListener("change", syncCustomEquipment));
-        syncCustomEquipment();
-
-        const otherThanCollisionSelect = document.getElementById("00NU7000007ALC1");
-        const fullCoverageGlassRadios = document.querySelectorAll('input[name="fullCoverageGlassRadios"]');
-        const fullCoverageGlassHidden = document.getElementById("fullCoverageGlassHidden");
-        const fullCoverageGlassDisclaimer = document.getElementById("fullCoverageGlassDisclaimer");
-
-function syncFullCoverageGlass() {
-  const checkedRadio = document.querySelector('input[name="fullCoverageGlassRadios"]:checked');
-  fullCoverageGlassHidden.value = checkedRadio ? checkedRadio.value : "";
-}
-
-fullCoverageGlassRadios.forEach(radio => radio.addEventListener("change", syncFullCoverageGlass));
-syncFullCoverageGlass();
-
-if (otherThanCollisionSelect) {
-  otherThanCollisionSelect.addEventListener("change", () => {
-    if (otherThanCollisionSelect.value && otherThanCollisionSelect.value !== "") {
-      fullCoverageGlassDisclaimer.classList.remove("hidden");
-    } else {
-      fullCoverageGlassDisclaimer.classList.add("hidden");
+    const leaseObserver = new MutationObserver(syncLeaseSectionRequirements);
+    if (leaseDetailsSection) {
+      leaseObserver.observe(leaseDetailsSection, { attributes: true, attributeFilter: ["class"] });
     }
-  });
-}
 
-        const enhancedLossSettlementRadios = document.querySelectorAll('input[name="enhancedLossSettlementRadios"]');
-        const enhancedLossSettlementHidden = document.getElementById("00NU7000009NOis");
+    const reviewBtn = document.getElementById("reviewBtn");
+    const dialog = document.getElementById("dialog");
+    const dialogTitle = document.getElementById("dialogTitle");
+    const missingFieldsList = document.getElementById("missingFieldsList");
+    const proceedBtn = document.getElementById("proceedBtn");
+    const editBtn = document.getElementById("editBtn");
+    const form = document.getElementById("mainForm");
+    const allFormDataTextarea = document.getElementById("00NU7000008TS4L");
 
-        function syncEnhancedLossSettlement() {
-          const checkedRadio = document.querySelector('input[name="enhancedLossSettlementRadios"]:checked');
-          enhancedLossSettlementHidden.value = checkedRadio ? checkedRadio.value : "";
-        }
+    let customEquipmentCount = 0;
+    const MAX_CUSTOM_EQUIPMENT = 4;
 
-        enhancedLossSettlementRadios.forEach(radio => radio.addEventListener("change", syncEnhancedLossSettlement));
+    // -------------------------
+    // Basic inputs / Pikaday
+    // -------------------------
 
-        const reviewBtn = document.getElementById("reviewBtn");
-        const dialog = document.getElementById("dialog");
-        const dialogTitle = document.getElementById("dialogTitle");
-        const missingFieldsList = document.getElementById("missingFieldsList");
-        const proceedBtn = document.getElementById("proceedBtn");
-        const editBtn = document.getElementById("editBtn");
-        const form = document.getElementById("mainForm");
-        const allFormDataTextarea = document.getElementById("00NU7000008TS4L");
+    if (policyInput) {
+      policyInput.addEventListener("input", function () {
+        this.value = this.value.replace(/[^A-Za-z0-9]/g, "");
+      });
+    }
 
-        function getRequiredFields() {
-          const fields = [
-            { id: "email", label: "Email", type: "email" },
-            { radioGroupName: "requestTypeRadios", label: "Select the Request Type:" },
-            { id: "00NU7000005zuX3", label: "Policy Number", type: "policy" },
-            { id: "00NU7000005zuLl", label: "Effective Date (MM/DD/YYYY)", type: "date" },
-            { id: "00NU7000007EGYk", label: "What is the Model Year?", type: "year" },
-            { id: "00NU7000006Knh3", label: "VIN Number of New Vehicle" },
-            { radioGroupName: "vehicleBusinessRadios", label: "Is the vehicle used for business?" },
-            { radioGroupName: "acquireVehicleRadios", label: "Did the client acquire this vehicle within the last 12 months?" },
-            { radioGroupName: "arizonaGarageRadios", label: "Is this vehicle garaged at the Arizona Residence Address?" },
-            { radioGroupName: "autoLoanLeaseRadios", label: "Auto Loan / Lease Coverage" },
-            { radioGroupName: "fullCoverageGlassRadios", label: "Full Coverage Glass" },
-            { radioGroupName: "customEquipmentRadios", label: "Custom Equipment (other than caps, covers and bedliners?)" }
-          ];
-          
-          for (let i = 1; i <= customEquipmentCount; i++) {
-            fields.push({ id: `value_${i}`, label: `Value of the custom equipment`, type: "customEquip" });
-            fields.push({ id: `description_${i}`, label: `Description of the custom equipment`, type: "customEquip" });
-            fields.push({ radioGroupName: `oem_installed_${i}`, label: `Was the custom equipment installed by the Original Equipment Manufacturer (OEM)?`, type: "customEquip" });
-          }
-          
-          return fields;
-        }
-
-        function formatDateForJSON(dateString) {
-          if (!dateString) return "";
+    if (window.Pikaday && dateInput) {
+      picker = new Pikaday({
+        field: dateInput,
+        format: "MM/DD/YYYY",
+        toString(date) {
+          const d = String(date.getDate()).padStart(2, "0");
+          const m = String(date.getMonth() + 1).padStart(2, "0");
+          const y = date.getFullYear();
+          return `${m}/${d}/${y}`;
+        },
+        parse(dateString) {
+          if (!dateString) return null;
           const [m, d, y] = dateString.split("/");
-          return `${y}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`;
+          return new Date(y, m - 1, d);
+        },
+        onSelect() {
+          dateInput.value = this.toString();
+        },
+        onClose() {
+          if (this.getDate()) dateInput.value = this.toString();
         }
+      });
+    }
 
-        function captureAllFormDataAsJSON() {
-          const formData = {};
-          const formElements = form.querySelectorAll("input, textarea, select");
-
-          formElements.forEach(element => {
-            if (
-              !element.name ||
-              element.name === "Form_Captured_Data__c" ||
-              element.name === "Form_Missing_Data__c" ||
-              element.name === "00NU7000008TS4L" ||
-              element.name === "requestTypeRadios" ||
-              element.name === "vehicleBusinessRadios" ||
-              element.name === "acquireVehicleRadios" ||
-              element.name === "arizonaGarageRadios" ||
-              element.name === "autoLoanLeaseRadios" ||
-              element.name === "customEquipmentRadios" ||
-              element.name === "enhancedLossSettlementRadios" ||
-              element.name === "fullCoverageGlass" ||
-              element.name.startsWith("oem_installed_") ||
-              element.name.startsWith("value_") ||
-              element.name.startsWith("description_")
-            ) return;
-
-            let fieldName = element.name.replace(/__c$/, "");
-            const skipFields = ["company", "delete_Action_Form", "lead_source", "phone", "status", "last_name", "first_name", "retURL", "oid"];
-            if (skipFields.includes(fieldName)) return;
-
-            const fieldMapping = {
-              "00NU7000005zuNN": "Policy_Action",
-              "Policy_Number": "Policy_Number",
-              "Carrier": "Carrier",
-              "Is_this_a_quote_or_a_change_request": "Is_this_a_quote_or_a_change_request",
-              "Date": "Effective_Date",
-              "email": "Email",
-              "00NU7000007EGYk": "Vehicle_Year",
-              "00NU7000006Knh3": "VIN_number_2",
-              "00NU7000009O2Uv": "Is_the_vehicle_used_for_business",
-              "00NU7000009O4V7": "Did_the_client_acquire_vehicle",
-              "00NU7000009O2zZ": "Is_this_vehicle_garaged_at_Arizona_Add",
-              "00NU7000007ALC1": "Other_than_Collision",
-              "fullCoverageGlass": "Full_Coverage_Glass",
-              "00NU7000006Ne7l": "Collision_Deductible",
-              "00NU7000006Nf8f": "Auto_Loan_Lease_Coverage",
-              "00NU7000008Adt7": "Transportation_Expense",
-              "00NU7000009NNA1": "Custom_Equipment_caps_covers_bedliners",
-              "00NU7000009NOis": "Car_Damage_Enhanced_Loss_Settlement"
-            };
-
-            fieldName = fieldMapping[fieldName] || fieldName;
-
-            if (fieldName === "Effective_Date" && element.value) {
-              formData[fieldName] = formatDateForJSON(element.value);
-            } else {
-              formData[fieldName] = element.value || "";
-            }
-          });
-
-          for (let i = 1; i <= customEquipmentCount; i++) {
-            const valueEl = document.getElementById(`value_${i}`);
-            const descEl = document.getElementById(`description_${i}`);
-            const oemEl = document.querySelector(`.oem-installed-select[data-index="${i}"]`);
-            
-            if (valueEl) formData[`Value_of_the_custom_equipment_${i}`] = valueEl.value || "";
-            if (descEl) formData[`Description_of_the_custom_equipment_${i}`] = descEl.value || "";
-            if (oemEl) formData[`Was_the_custom_equipment_OEM_installed_${i}`] = oemEl.value || "";
+    if (window.Pikaday && yearInput) {
+      const yearPicker = new Pikaday({
+        field: yearInput,
+        format: "YYYY",
+        minDate: new Date(1900, 0, 1),
+        maxDate: new Date(2100, 11, 31),
+        yearRange: [1900, 2100],
+        toString(date) {
+          return String(date.getFullYear());
+        },
+        parse(dateString) {
+          const year = parseInt(dateString, 10);
+          if (!year || String(year).length !== 4) return null;
+          return new Date(year, 0, 1);
+        },
+        onSelect() {
+          yearInput.value = String(this.getDate().getFullYear()).slice(0, 4);
+        },
+        onOpen() {
+          const current = parseInt(yearInput.value, 10);
+          if (!isNaN(current) && String(current).length === 4) {
+            this.setDate(new Date(current, 0, 1), true);
           }
-
-          return JSON.stringify(formData, null, 2);
         }
+      });
 
-        function validateYear(val) {
-          return /^[0-9]{4}$/.test(val);
+      yearInput.addEventListener("input", () => {
+        yearInput.value = yearInput.value.replace(/\D/g, "").slice(0, 4);
+      });
+    }
+
+    if (window.Pikaday && leaseDateInput) {
+      new Pikaday({
+        field: leaseDateInput,
+        format: "MM/DD/YYYY",
+        toString(date) {
+          const d = String(date.getDate()).padStart(2, "0");
+          const m = String(date.getMonth() + 1).padStart(2, "0");
+          const y = date.getFullYear();
+          return `${m}/${d}/${y}`;
+        },
+        parse(dateString) {
+          if (!dateString) return null;
+          const [m, d, y] = dateString.split("/");
+          return new Date(y, m - 1, d);
+        },
+        onSelect() {
+          leaseDateInput.value = this.toString();
+        },
+        onClose() {
+          if (this.getDate()) {
+            leaseDateInput.value = this.toString();
+          }
         }
+      });
+    }
 
-       function validatePolicyNumber(val) {
-      // Validation removed - any non-empty value is accepted
-      return val.trim().length > 0;
+    // -------------------------
+    // Sync helpers
+    // -------------------------
+
+    function syncRequestType() {
+      const checkedRadio = document.querySelector('input[name="requestTypeRadios"]:checked');
+      requestHiddenSelect.value = checkedRadio ? checkedRadio.value : "";
+      toggleLeaseDetailsSection();
+    }
+
+    function syncVehicleBusiness() {
+      const checkedRadio = document.querySelector('input[name="vehicleBusinessRadios"]:checked');
+      vehicleBusinessHidden.value = checkedRadio ? checkedRadio.value : "";
+    }
+
+    function syncAcquireVehicle() {
+      const checkedRadio = document.querySelector('input[name="acquireVehicleRadios"]:checked');
+      acquireVehicleHidden.value = checkedRadio ? checkedRadio.value : "";
+    }
+
+    function syncArizonaGarage() {
+      const checkedRadio = document.querySelector('input[name="arizonaGarageRadios"]:checked');
+      arizonaGarageHidden.value = checkedRadio ? checkedRadio.value : "";
+    }
+
+    // HARD DEFAULT: Auto Loan / Lease = N
+    if (autoLoanLeaseHidden) {
+      autoLoanLeaseHidden.value = "N";
+    }
+    autoLoanLeaseRadios.forEach(radio => {
+      if (radio.value === "N") {
+        radio.checked = true;
+      }
+    });
+
+    function syncAutoLoanLease() {
+      const checkedRadio = document.querySelector('input[name="autoLoanLeaseRadios"]:checked');
+      const otc = otherThanCollisionSelect ? otherThanCollisionSelect.value : "";
+      const collision = collisionSelect ? collisionSelect.value : "";
+
+      // Gate YES on OTC + Collision
+      if (checkedRadio && checkedRadio.value === "Y" && (!otc || !collision)) {
+        autoLoanLeaseRadios.forEach(radio => {
+          radio.checked = radio.value === "N";
+        });
+        autoLoanLeaseHidden.value = "N";
+      } else {
+        autoLoanLeaseHidden.value = checkedRadio ? checkedRadio.value : "N";
       }
 
-        function validateFields() {
-          const missing = [];
-          const requiredFields = getRequiredFields();
+      toggleLeaseDetailsSection();
+      togglePolicyCoverages();
+    }
 
-          requiredFields.forEach(field => {
-            if (field.radioGroupName) {
-              const radios = document.querySelectorAll(`input[name="${field.radioGroupName}"]`);
-              const checked = [...radios].some(r => r.checked);
-              
-              if (field.type === "customEquip") {
-                if (customEquipmentCount > 0 && field.radioGroupName.startsWith("oem_installed_")) {
-                  const idx = field.radioGroupName.split("_")[1];
-                  if (idx && customEquipmentCount >= idx) {
-                    if (!checked) missing.push(field.label);
-                  }
-                } else if (!checked && !field.radioGroupName.startsWith("oem_installed_")) {
-                  missing.push(field.label);
-                }
-              } else {
-                if (!checked) missing.push(field.label);
-              }
-              return;
-            }
+    function syncVehicleLeased() {
+      const checkedRadio = document.querySelector('input[name="vehicleLeasedRadios"]:checked');
+      vehicleLeasedHidden.value = checkedRadio ? checkedRadio.value : "";
+    }
 
-            const el = document.getElementById(field.id);
-            if (!el) return;
+    function syncPreviousLoanCarryOver() {
+      const checkedRadio = document.querySelector(
+        'input[name="previousLoanCarryOverRadios"]:checked'
+      );
+      previousLoanCarryOverHidden.value = checkedRadio ? checkedRadio.value : "";
+    }
 
-            if (field.type === "email") {
-              if (!el.value.trim() || !el.checkValidity()) missing.push(field.label);
-            } else if (field.type === "date") {
-              const val = el.value.trim();
-              const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}$/;
-              if (!val || !dateRegex.test(val)) missing.push(field.label);
-            } else if (field.type === "year") {
-              if (!validateYear(el.value.trim())) missing.push(field.label);
-            } else if (field.type === "policy") {
-              if (!el.value.trim()) missing.push(field.label);
-            } else if (field.type === "customEquip") {
-              if (!el.value.trim()) missing.push(field.label);
-            } else {
-              if (!el.value.trim()) missing.push(field.label);
-            }
-          });
+    function syncPriorCarrierProvidedLoan() {
+      const checkedRadio = document.querySelector(
+        'input[name="priorCarrierProvidedLoanRadios"]:checked'
+      );
+      priorCarrierProvidedLoanHidden.value = checkedRadio ? checkedRadio.value : "";
+    }
 
-          return missing;
-        }
+    function syncCustomEquipment() {
+      const checkedRadio = document.querySelector('input[name="customEquipmentRadios"]:checked');
+      customEquipmentHidden.value = checkedRadio ? checkedRadio.value : "";
 
-        function captureFormData() {
-          if (picker && picker.getDate()) {
-            dateInput.value = picker.toString();
-          }
+      if (checkedRadio && checkedRadio.value === "Y") {
+        customEquipmentFields.classList.remove("hidden");
+        if (customEquipmentCount === 0) addCustomEquipmentGroup();
+      } else {
+        customEquipmentFields.classList.add("hidden");
+        customEquipmentContainer.innerHTML = "";
+        customEquipmentCount = 0;
+      }
+    }
 
-          const missing = [];
-          const filled = [];
-          const requiredFields = getRequiredFields();
+    function addCustomEquipmentGroup() {
+      if (customEquipmentCount >= MAX_CUSTOM_EQUIPMENT) return;
 
-          requiredFields.forEach(field => {
-            if (field.radioGroupName) {
-              const checked = document.querySelector(`input[name="${field.radioGroupName}"]:checked`);
-              if (field.type === "customEquip" && field.radioGroupName.startsWith("oem_installed_")) {
-                const idx = field.radioGroupName.split("_")[1];
-                if (idx && customEquipmentCount >= idx) {
-                  if (checked) filled.push(`${field.label} (${idx}): ${checked.value}`);
-                  else missing.push(field.label);
-                }
-              } else if (field.type !== "customEquip") {
-                if (checked) filled.push(`${field.label}: ${checked.value}`);
-                else missing.push(field.label);
-              }
-              return;
-            }
+      customEquipmentCount++;
+      const index = customEquipmentCount;
 
-            const el = document.getElementById(field.id);
-            if (!el) return;
+      const groupDiv = document.createElement("div");
+      groupDiv.className = "custom-equipment-group";
+      groupDiv.id = `customEquipmentGroup_${index}`;
 
-            if (field.type === "customEquip") {
-              if (el.value.trim()) filled.push(`${field.label}: ${el.value.trim()}`);
-              else missing.push(field.label);
-            } else {
-              if (!el.value.trim()) {
-                missing.push(field.label);
-              } else {
-                filled.push(`${field.label}: ${el.value.trim()}`);
-              }
-            }
-          });
+      groupDiv.innerHTML = `
+        <h4>Custom Equipment ${index}</h4>
+        <div class="mb-4">
+          <label for="value_${index}" class="block text-sm font-medium text-gray-700">
+            Value of the custom equipment<span class="star">*</span>
+          </label>
+          <input
+            type="text"
+            id="value_${index}"
+            name="value_${index}"
+            data-sf-field="00NU7000009NOyv"
+            data-index="${index}"
+            maxlength="50"
+            class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 custom-equipment-value"
+            autocomplete="off"
+            ${index === 1 ? "required" : ""}
+          />
+        </div>
+        <div class="mb-4">
+          <label for="description_${index}" class="block text-sm font-medium text-gray-700">
+            Description of the custom equipment<span class="star">*</span>
+          </label>
+          <input
+            type="text"
+            id="description_${index}"
+            name="description_${index}"
+            data-sf-field="00NU7000009NQ6H"
+            data-index="${index}"
+            maxlength="50"
+            class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 custom-equipment-description"
+            autocomplete="off"
+            ${index === 1 ? "required" : ""}
+          />
+        </div>
+        <div class="mb-4">
+          <fieldset>
+            <legend class="block text-sm font-medium text-gray-700 mb-1">
+              Was the custom equipment installed by the Original Equipment Manufacturer (OEM)?<span class="star">*</span>
+            </legend>
+            <div class="flex space-x-6">
+              <label class="inline-flex items-center">
+                <input type="radio" name="oem_installed_${index}" value="Y" class="mr-2" ${index === 1 ? "required" : ""} />Yes
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" name="oem_installed_${index}" value="N" class="mr-2" ${index === 1 ? "required" : ""} />No
+              </label>
+            </div>
+            <select class="hidden oem-installed-select" data-index="${index}">
+              <option value=""></option>
+              <option value="Y">Y</option>
+              <option value="N">N</option>
+            </select>
+          </fieldset>
+        </div>
+      `;
 
-          let missingField = document.getElementById("Form_Missing_Data__c");
-          let capturedField = document.getElementById("Form_Captured_Data__c");
+      customEquipmentContainer.appendChild(groupDiv);
 
-          if (!missingField) {
-            missingField = document.createElement("input");
-            missingField.type = "hidden";
-            missingField.id = "Form_Missing_Data__c";
-            missingField.name = "Form_Missing_Data__c";
-            form.appendChild(missingField);
-          }
+      const oemRadios = groupDiv.querySelectorAll('input[name^="oem_installed_"]');
+      const oemSelect = groupDiv.querySelector(".oem-installed-select");
 
-          if (!capturedField) {
-            capturedField = document.createElement("input");
-            capturedField.type = "hidden";
-            capturedField.id = "Form_Captured_Data__c";
-            capturedField.name = "Form_Captured_Data__c";
-            form.appendChild(capturedField);
-          }
-
-          missingField.value = missing.join("\n");
-          capturedField.value = filled.join("\n");
-        }
-
-        reviewBtn.addEventListener("click", () => {
-          const missing = validateFields();
-          allFormDataTextarea.value = captureAllFormDataAsJSON();
-
-          if (missing.length) {
-            dialogTitle.textContent = "Below Mandatory Fields are missing and the Team will contact you shortly.";
-            missingFieldsList.innerHTML = missing.map(f => `<li>${f}</li>`).join("");
-          } else {
-            dialogTitle.textContent = "All mandatory fields are completed. Ready to submit your request?";
-            missingFieldsList.innerHTML = "";
-          }
-
-          dialog.classList.remove("hidden");
-        });
-
-        editBtn.addEventListener("click", () => dialog.classList.add("hidden"));
-
-        proceedBtn.addEventListener("click", () => {
-          captureFormData();
-          dialog.classList.add("hidden");
-          if (picker && picker.getDate()) {
-            dateInput.value = picker.toString();
-          }
-          form.submit();
-        });
-
-        window.addEventListener("click", e => {
-          if (e.target === dialog) dialog.classList.add("hidden");
-        });
-
-        window.addEventListener("keydown", e => {
-          if (e.key === "Escape" && !dialog.classList.contains("hidden")) {
-            dialog.classList.add("hidden");
-          }
+      oemRadios.forEach(radio => {
+        radio.addEventListener("change", () => {
+          const checked = groupDiv.querySelector('input[name^="oem_installed_"]:checked');
+          oemSelect.value = checked ? checked.value : "";
         });
       });
-    </script>
+
+      if (customEquipmentCount >= MAX_CUSTOM_EQUIPMENT) {
+        addCustomEquipmentBtn.classList.add("hidden");
+      }
+    }
+
+    function syncFullCoverageGlass() {
+      const checkedRadio = document.querySelector('input[name="fullCoverageGlassRadios"]:checked');
+      fullCoverageGlassHidden.value = checkedRadio ? checkedRadio.value : "";
+      togglePolicyCoverages();
+    }
+
+    function syncEnhancedLossSettlement() {
+      const checkedRadio = document.querySelector(
+        'input[name="enhancedLossSettlementRadios"]:checked'
+      );
+      enhancedLossSettlementHidden.value = checkedRadio ? checkedRadio.value : "";
+      togglePolicyCoverages();
+    }
+
+    function clearSection(section) {
+      if (!section) return;
+
+      section.querySelectorAll("input, select, textarea").forEach(el => {
+        if (el.type === "radio" || el.type === "checkbox") {
+          el.checked = false;
+        } else if (el.tagName === "SELECT") {
+          el.selectedIndex = 0;
+        } else {
+          el.value = "";
+        }
+
+        el.required = false;
+      });
+    }
+
+    function toggleLeaseDetailsSection() {
+      if (!leaseDetailsSection) return;
+
+      const requestType = requestHiddenSelect.value;
+      const autoLoanLease = autoLoanLeaseHidden.value;
+
+      const allFields = leaseDetailsSection.querySelectorAll(".mb-4");
+
+      const titledField = document
+        .getElementById("00NU7000009O5B3")
+        .closest(".mb-4");
+
+      leaseDetailsSection.classList.add("hidden");
+      clearSection(leaseDetailsSection);
+
+      allFields.forEach(div => div.classList.add("hidden"));
+
+      if (requestType !== "N") {
+        syncLeaseSectionRequirements();
+        return;
+      }
+
+      if (autoLoanLease === "Y") {
+        leaseDetailsSection.classList.remove("hidden");
+        allFields.forEach(div => div.classList.remove("hidden"));
+      } else if (autoLoanLease === "N") {
+        leaseDetailsSection.classList.remove("hidden");
+        titledField.classList.remove("hidden");
+      }
+
+      syncLeaseSectionRequirements();
+    }
+
+    // Ensure hidden fields start empty
+fullCoverageGlassHidden.value = "";
+enhancedLossSettlementHidden.value = "";
+vehicleLeasedHidden.value = "";
+customEquipmentHidden.value = "";
+togglePolicyCoverages();
+
+    function togglePolicyCoverages() {
+      const otc = otherThanCollisionSelect.value;
+      const collision = collisionSelect.value;
+
+      fullCoverageGlassField.classList.add("hidden");
+      collisionDeductibleField.classList.add("hidden");
+      transportationExpenseField.classList.add("hidden");
+      customEquipmentField.classList.add("hidden");
+      enhancedLossField.classList.add("hidden");
+      vehicleLeasedField.classList.add("hidden");
+
+      fullCoverageGlassHidden.required = false;
+      collisionDeductible.required = false;
+      transportationExpense.required = false;
+      customEquipmentHidden.required = false;
+      autoLoanLeaseHidden.required = false;
+      enhancedLossSettlementHidden.required = false;
+      vehicleLeasedHidden.required = false;
+
+      if (otc) {
+        fullCoverageGlassField.classList.remove("hidden");
+        collisionDeductibleField.classList.remove("hidden");
+        transportationExpenseField.classList.remove("hidden");
+        customEquipmentField.classList.remove("hidden");
+
+        fullCoverageGlassHidden.required = true;
+        collisionDeductible.required = true;
+        transportationExpense.required = true;
+        customEquipmentHidden.required = true;
+      }
+
+      const fullGlass = fullCoverageGlassHidden.value;
+
+      if (otc && fullGlass && collision) {
+        enhancedLossField.classList.remove("hidden");
+        enhancedLossSettlementHidden.required = true;
+      } else {
+        enhancedLossField.classList.add("hidden");
+
+        enhancedLossSettlementHidden.required = false;
+        enhancedLossSettlementHidden.value = "";
+
+        document.querySelectorAll(
+          'input[name="enhancedLossSettlementRadios"]'
+        ).forEach(r => r.checked = false);
+      }
+
+      if (enhancedLossSettlementHidden.value === "Y") {
+        vehicleLeasedField.classList.remove("hidden");
+        vehicleLeasedHidden.required = true;
+      } else {
+        vehicleLeasedField.classList.add("hidden");
+
+        vehicleLeasedHidden.required = false;
+        vehicleLeasedHidden.value = "";
+
+        document.querySelectorAll(
+          'input[name="vehicleLeasedRadios"]'
+        ).forEach(r => r.checked = false);
+      }
+
+      toggleLeaseDetailsSection();
+    }
+
+    function syncLeaseSectionRequirements() {
+      const requestType = requestHiddenSelect.value;
+      const autoLoanLease = autoLoanLeaseHidden.value;
+
+      if (!leaseDetailsSection) return;
+
+      leaseDetailsSection
+        .querySelectorAll("input, select")
+        .forEach(el => el.required = false);
+
+      if (requestType !== "N") return;
+
+      document.getElementById("00NU7000009O5B3").required = true;
+
+      if (autoLoanLease === "Y") {
+        [
+          "00NU7000009O5Cf",
+          "00NU7000006OUCn",
+          "00NU70000074ACr",
+          "00NU70000074A4n",
+          "00NU70000074APl",
+          "00NU7000007QpPR",
+          "00NU7000007QpUH",
+          "00NU7000005zvUj",
+          "00NU7000005zvWL",
+          "00NU7000006cbfp"
+        ].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.required = true;
+        });
+
+        document.getElementById("00NU7000009O5Ft").required = true;
+        document.getElementById("00NU7000009O5Nx").required = true;
+      }
+    }
+
+    // -------------------------
+    // Validation / JSON capture
+    // -------------------------
+
+    function getRequiredFields() {
+      const fields = [
+        { id: "email", label: "Email", type: "email" },
+        { radioGroupName: "requestTypeRadios", label: "Select the Request Type:" },
+        { id: "00NU7000005zuX3", label: "Policy Number", type: "policy" },
+        { id: "00NU7000005zuLl", label: "Effective Date (MM/DD/YYYY)", type: "date" },
+        { radioGroupName: "fullCoverageGlassRadios", label: "Full Coverage Glass" },
+        { id: "00NU7000007EGYk", label: "What is the Model Year?", type: "year" },
+        { id: "00NU7000006Knh3", label: "VIN Number of New Vehicle" },
+        { radioGroupName: "vehicleBusinessRadios", label: "Is the vehicle used for business?" },
+        { radioGroupName: "acquireVehicleRadios", label: "Did the client acquire this vehicle within the last 12 months?" },
+        { radioGroupName: "arizonaGarageRadios", label: "Is this vehicle garaged at the Arizona Residence Address?" },
+        { radioGroupName: "autoLoanLeaseRadios", label: "Auto Loan / Lease Coverage" },
+      ];
+      // Only require Custom Equipment when OTC is selected
+if (otherThanCollisionSelect && otherThanCollisionSelect.value) {
+  fields.push({ radioGroupName: "customEquipmentRadios", label: "Custom Equipment (other than caps, covers and bedliners?)" });
+}
+
+// Only require Vehicle Leased when Enhanced Loss is Y
+if (enhancedLossSettlementHidden.value === "Y") {
+  fields.push({ radioGroupName: "vehicleLeasedRadios", label: "Is this vehicle leased?" });
+}
+      const requestType = requestHiddenSelect.value;
+      const autoLoanLease = autoLoanLeaseHidden.value;
+
+      if (requestType === "N") {
+        fields.push({
+          id: "00NU7000009O5B3",
+          label: "Vehicle is titled in the name of",
+          type: "text"
+        });
+
+        if (autoLoanLease === "Y") {
+          fields.push(
+            {
+              id: "00NU7000009O5Cf",
+              label: "What date was the vehicle Leased/Financed to insured?",
+              type: "date"
+            },
+            {
+              radioGroupName: "previousLoanCarryOverRadios",
+              label: "Does the vehicle loan or lease contain any type of carry-over balance from a previous loan or lease?"
+            },
+            {
+              radioGroupName: "priorCarrierProvidedLoanRadios",
+              label: "Did the prior auto carrier provide Loan/Lease Coverage on this vehicle ?"
+            },
+            {
+              id: "00NU7000006OUCn",
+              label: "Interest Type",
+              type: "text"
+            },
+            {
+              id: "00NU70000074ACr",
+              label: "Loan Number",
+              type: "text"
+            },
+            {
+              id: "00NU70000074A4n",
+              label: "Name 1",
+              type: "text"
+            },
+            {
+              id: "00NU7000007QpPR",
+              label: "Street Address",
+              type: "text"
+            },
+            {
+              id: "00NU7000005zvUj",
+              label: "City",
+              type: "text"
+            },
+            {
+              id: "00NU7000005zvWL",
+              label: "State",
+              type: "text"
+            },
+            {
+              id: "00NU7000006cbfp",
+              label: "ZIP Code",
+              type: "text"
+            }
+          );
+        }
+      }
+
+      for (let i = 1; i <= customEquipmentCount; i++) {
+        fields.push({ id: `value_${i}`, label: `Value of the custom equipment`, type: "customEquip" });
+        fields.push({ id: `description_${i}`, label: `Description of the custom equipment`, type: "customEquip" });
+        fields.push({
+          radioGroupName: `oem_installed_${i}`,
+          label: `Was the custom equipment installed by the Original Equipment Manufacturer (OEM)?`,
+          type: "customEquip"
+        });
+      }
+
+      return fields;
+    }
+
+    function formatDateForJSON(dateString) {
+      if (!dateString) return "";
+      const [m, d, y] = dateString.split("/");
+      return `${y}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`;
+    }
+
+    function captureAllFormDataAsJSON() {
+      const formData = {};
+      const formElements = form.querySelectorAll("input, textarea, select");
+
+      formElements.forEach(element => {
+        if (
+          !element.name ||
+          element.name === "Form_Captured_Data__c" ||
+          element.name === "Form_Missing_Data__c" ||
+          element.name === "00NU7000008TS4L" ||
+          element.name === "requestTypeRadios" ||
+          element.name === "vehicleBusinessRadios" ||
+          element.name === "acquireVehicleRadios" ||
+          element.name === "arizonaGarageRadios" ||
+          element.name === "autoLoanLeaseRadios" ||
+          element.name === "customEquipmentRadios" ||
+          element.name === "fullCoverageGlassRadios" ||
+          element.name === "enhancedLossSettlementRadios" ||
+          element.name === "previousLoanCarryOverRadios" ||
+          element.name === "priorCarrierProvidedLoanRadios" ||
+          element.name === "vehicleLeasedRadios" ||
+          element.name.startsWith("oem_installed_") ||
+          element.name.startsWith("value_") ||
+          element.name.startsWith("description_")
+        ) return;
+
+        let fieldName = element.name.replace(/__c$/, "");
+        const skipFields = [
+          "company", "delete_Action_Form", "lead_source", "phone", "status",
+          "last_name", "first_name", "retURL", "oid"
+        ];
+        if (skipFields.includes(fieldName)) return;
+
+        const fieldMapping = {
+          "00NU7000005zuNN": "Policy_Action",
+          "Policy_Number": "Policy_Number",
+          "Carrier": "Carrier",
+          "Is_this_a_quote_or_a_change_request": "Is_this_a_quote_or_a_change_request",
+          "Date": "Effective_Date",
+          "email": "Email",
+          "00NU7000007EGYk": "Vehicle_Year",
+          "00NU7000006Knh3": "VIN_number_2",
+          "00NU7000009O2Uv": "Is_the_vehicle_used_for_business",
+          "00NU7000009O4V7": "Did_the_client_acquire_vehicle",
+          "00NU7000009O2zZ": "Is_this_vehicle_garaged_at_Arizona_Add",
+          "00NU7000007ALC1": "Other_than_Collision",
+          "fullCoverageGlass": "Full_Safety_Glass",
+          "00NU7000006Ne7l": "00NU7000006Ne7l",
+          "00NU7000006Nf8f": "Auto_Loan_Lease_Coverage",
+          "00NU7000008Adt7": "Transportation_Expense",
+          "00NU7000009NNA1": "Custom_Equipment_caps_covers_bedliners",
+          "00NU7000009NOis": "Car_Damage_Enhanced_Loss_Settlement",
+          "00NU7000009O5B3": "Vehicle_is_titled_in_the_name_of",
+          "00NU7000009O5Cf": "vehicle_Leased_Financed_Date",
+          "00NU7000009O5Ft": "PreviousLoanCarryOver",
+          "00NU7000009O5Nx": "PriorCarrierProvidedLoan",
+          "00NU7000006OUCn": "Interest_Type",
+          "00NU70000074ACr": "loanNumber_1",
+          "00NU70000074A4n": "name_1",
+          "00NU70000074APl": "name_2",
+          "00NU7000007QpPR": "Lienholder_Address_1",
+          "00NU7000007QpUH": "Lienholder_Address_2",
+          "00NU7000005zvUj": "City",
+          "00NU7000005zvWL": "State",
+          "00NU7000006cbfp": "Interest_Zip_Code"
+        };
+
+        fieldName = fieldMapping[fieldName] || fieldName;
+
+        if (fieldName === "Effective_Date" && element.value) {
+          formData[fieldName] = formatDateForJSON(element.value);
+        } else if (fieldName === "vehicle_Leased_Financed_Date" && element.value) {
+          formData[fieldName] = formatDateForJSON(element.value);
+        } else {
+          formData[fieldName] = element.value || "";
+        }
+      });
+
+      for (let i = 1; i <= customEquipmentCount; i++) {
+        const valueEl = document.getElementById(`value_${i}`);
+        const descEl = document.getElementById(`description_${i}`);
+        const oemEl = document.querySelector(`.oem-installed-select[data-index="${i}"]`);
+
+        if (valueEl) formData[`Value_of_the_custom_equipment_${i}`] = valueEl.value || "";
+        if (descEl) formData[`Description_of_the_custom_equipment_${i}`] = descEl.value || "";
+        if (oemEl) formData[`Was_the_custom_equipment_OEM_installed_${i}`] = oemEl.value || "";
+      }
+
+      return JSON.stringify(formData, null, 2);
+    }
+
+    function validateYear(val) {
+      return /^[0-9]{4}$/.test(val);
+    }
+
+    function validatePolicyNumber(val) {
+      return val.trim().length > 0;
+    }
+
+    function validateFields() {
+      const missing = [];
+      const requiredFields = getRequiredFields();
+
+      requiredFields.forEach(field => {
+        if (field.radioGroupName) {
+          const radios = document.querySelectorAll(`input[name="${field.radioGroupName}"]`);
+          const checked = [...radios].some(r => r.checked);
+
+          if (field.type === "customEquip") {
+            if (customEquipmentCount > 0 && field.radioGroupName.startsWith("oem_installed_")) {
+              const idx = field.radioGroupName.split("_")[1];
+              if (idx && customEquipmentCount >= idx) {
+                if (!checked) missing.push(field.label);
+              }
+            } else if (!checked && !field.radioGroupName.startsWith("oem_installed_")) {
+              missing.push(field.label);
+            }
+          } else {
+            if (!checked) missing.push(field.label);
+          }
+          return;
+        }
+
+        const el = document.getElementById(field.id);
+        if (!el) return;
+
+        if (field.type === "email") {
+          if (!el.value.trim() || !el.checkValidity()) missing.push(field.label);
+        } else if (field.type === "date") {
+          const val = el.value.trim();
+          const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/(19|20)\d{2}$/;
+          if (!val || !dateRegex.test(val)) missing.push(field.label);
+        } else if (field.type === "year") {
+          if (!validateYear(el.value.trim())) missing.push(field.label);
+        } else if (field.type === "policy") {
+          if (!el.value.trim()) missing.push(field.label);
+        } else if (field.type === "customEquip") {
+          if (!el.value.trim()) missing.push(field.label);
+        } else {
+          if (!el.value.trim()) missing.push(field.label);
+        }
+      });
+
+      return missing;
+    }
+
+    function captureFormData() {
+      if (picker && picker.getDate()) {
+        dateInput.value = picker.toString();
+      }
+
+      const missing = [];
+      const filled = [];
+      const requiredFields = getRequiredFields();
+
+      requiredFields.forEach(field => {
+        if (field.radioGroupName) {
+          const checked = document.querySelector(`input[name="${field.radioGroupName}"]:checked`);
+          if (field.type === "customEquip" && field.radioGroupName.startsWith("oem_installed_")) {
+            const idx = field.radioGroupName.split("_")[1];
+            if (idx && customEquipmentCount >= idx) {
+              if (checked) filled.push(`${field.label} (${idx}): ${checked.value}`);
+              else missing.push(field.label);
+            }
+          } else if (field.type !== "customEquip") {
+            if (checked) filled.push(`${field.label}: ${checked.value}`);
+            else missing.push(field.label);
+          }
+          return;
+        }
+
+        const el = document.getElementById(field.id);
+        if (!el) return;
+
+        if (field.type === "customEquip") {
+          if (el.value.trim()) filled.push(`${field.label}: ${el.value.trim()}`);
+          else missing.push(field.label);
+        } else {
+          if (!el.value.trim()) {
+            missing.push(field.label);
+          } else {
+            filled.push(`${field.label}: ${el.value.trim()}`);
+          }
+        }
+      });
+
+      let missingField = document.getElementById("Form_Missing_Data__c");
+      let capturedField = document.getElementById("Form_Captured_Data__c");
+
+      if (!missingField) {
+        missingField = document.createElement("input");
+        missingField.type = "hidden";
+        missingField.id = "Form_Missing_Data__c";
+        missingField.name = "Form_Missing_Data__c";
+        form.appendChild(missingField);
+      }
+
+      if (!capturedField) {
+        capturedField = document.createElement("input");
+        capturedField.type = "hidden";
+        capturedField.id = "Form_Captured_Data__c";
+        capturedField.name = "Form_Captured_Data__c";
+        form.appendChild(capturedField);
+      }
+
+      missingField.value = missing.join("\n");
+      capturedField.value = filled.join("\n");
+    }
+
+    // -------------------------
+    // Event wiring & init
+    // -------------------------
+
+    requestRadios.forEach(radio => radio.addEventListener("change", syncRequestType));
+    vehicleBusinessRadios.forEach(radio => radio.addEventListener("change", syncVehicleBusiness));
+    acquireVehicleRadios.forEach(radio => radio.addEventListener("change", syncAcquireVehicle));
+    arizonaGarageRadios.forEach(radio => radio.addEventListener("change", syncArizonaGarage));
+    autoLoanLeaseRadios.forEach(radio => radio.addEventListener("change", syncAutoLoanLease));
+    vehicleLeasedRadios.forEach(radio => radio.addEventListener("change", syncVehicleLeased));
+    previousLoanCarryOverRadios.forEach(radio => radio.addEventListener("change", syncPreviousLoanCarryOver));
+    priorCarrierProvidedLoanRadios.forEach(radio => radio.addEventListener("change", syncPriorCarrierProvidedLoan));
+    customEquipmentRadios.forEach(radio => radio.addEventListener("change", syncCustomEquipment));
+    addCustomEquipmentBtn.addEventListener("click", addCustomEquipmentGroup);
+
+    fullCoverageGlassRadios.forEach(radio => radio.addEventListener("change", syncFullCoverageGlass));
+    enhancedLossSettlementRadios.forEach(radio => radio.addEventListener("change", syncEnhancedLossSettlement));
+
+    if (otherThanCollisionSelect) {
+      otherThanCollisionSelect.addEventListener("change", function () {
+        if (otherThanCollisionSelect.value) {
+          fullCoverageGlassDisclaimer.classList.remove("hidden");
+        } else {
+          fullCoverageGlassDisclaimer.classList.add("hidden");
+        }
+
+        togglePolicyCoverages();
+        syncAutoLoanLease();
+      });
+    }
+
+    if (collisionSelect) {
+      collisionSelect.addEventListener("change", () => {
+        togglePolicyCoverages();
+        syncAutoLoanLease();
+      });
+    }
+
+    syncCustomEquipment();
+    syncLeaseSectionRequirements();
+    syncRequestType();
+    syncAutoLoanLease();
+    syncVehicleLeased();
+    syncPreviousLoanCarryOver();
+    syncPriorCarrierProvidedLoan();
+    togglePolicyCoverages();
+
+    reviewBtn.addEventListener("click", () => {
+      const missing = validateFields();
+      allFormDataTextarea.value = captureAllFormDataAsJSON();
+
+      if (missing.length) {
+        dialogTitle.textContent = "Below Mandatory Fields are missing and the Team will contact you shortly.";
+        missingFieldsList.innerHTML = missing.map(f => `<li>${f}</li>`).join("");
+      } else {
+        dialogTitle.textContent = "All mandatory fields are completed. Ready to submit your request?";
+        missingFieldsList.innerHTML = "";
+      }
+
+      dialog.classList.remove("hidden");
+    });
+
+    editBtn.addEventListener("click", () => dialog.classList.add("hidden"));
+
+    proceedBtn.addEventListener("click", () => {
+      captureFormData();
+      dialog.classList.add("hidden");
+      if (picker && picker.getDate()) {
+        dateInput.value = picker.toString();
+      }
+      form.submit();
+    });
+
+    window.addEventListener("click", e => {
+      if (e.target === dialog) dialog.classList.add("hidden");
+    });
+
+    window.addEventListener("keydown", e => {
+      if (e.key === "Escape" && !dialog.classList.contains("hidden")) {
+        dialog.classList.add("hidden");
+      }
+    });
+  });
+</script>
   </body>
 </html>
