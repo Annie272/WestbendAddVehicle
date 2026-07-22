@@ -666,6 +666,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     let picker = null;
+
     const dateInput = document.getElementById("00NU7000005zuLl");
     const policyInput = document.getElementById("00NU7000005zuX3");
     const yearInput = document.getElementById("00NU7000007EGYk");
@@ -722,20 +723,10 @@
     const enhancedLossField = enhancedLossSection;
     const vehicleLeasedField = vehicleLeaseSection;
 
-    // Initial state: hide coverage-related sections
-fullCoverageGlassField.classList.add("hidden");
-collisionDeductibleField.classList.add("hidden");
-transportationExpenseField.classList.add("hidden");
-customEquipmentField.classList.add("hidden");
-enhancedLossField.classList.add("hidden");
-vehicleLeasedField.classList.add("hidden");
-
-
     // Individual inputs
     const collisionDeductible = document.getElementById("00NU7000006Ne7l");
     const transportationExpense = document.getElementById("00NU7000008Adt7");
 
-    // Auto Loan section container
     const autoLoanLeaseField =
       document.querySelector('input[name="autoLoanLeaseRadios"]').closest(".mb-4");
 
@@ -766,6 +757,14 @@ vehicleLeasedField.classList.add("hidden");
 
     let customEquipmentCount = 0;
     const MAX_CUSTOM_EQUIPMENT = 4;
+
+    // Initial hide for coverage-related sections
+    fullCoverageGlassField.classList.add("hidden");
+    collisionDeductibleField.classList.add("hidden");
+    transportationExpenseField.classList.add("hidden");
+    customEquipmentField.classList.add("hidden");
+    enhancedLossField.classList.add("hidden");
+    vehicleLeasedField.classList.add("hidden");
 
     // -------------------------
     // Basic inputs / Pikaday
@@ -1091,13 +1090,6 @@ vehicleLeasedField.classList.add("hidden");
       syncLeaseSectionRequirements();
     }
 
-    // Ensure hidden fields start empty
-fullCoverageGlassHidden.value = "";
-enhancedLossSettlementHidden.value = "";
-vehicleLeasedHidden.value = "";
-customEquipmentHidden.value = "";
-togglePolicyCoverages();
-
     function togglePolicyCoverages() {
       const otc = otherThanCollisionSelect.value;
       const collision = collisionSelect.value;
@@ -1127,6 +1119,17 @@ togglePolicyCoverages();
         collisionDeductible.required = true;
         transportationExpense.required = true;
         customEquipmentHidden.required = true;
+      } else {
+        // Clear Full Coverage Glass when OTC not selected
+        fullCoverageGlassHidden.value = "";
+        document.querySelectorAll('input[name="fullCoverageGlassRadios"]').forEach(r => r.checked = false);
+
+        // Clear Custom Equipment when OTC not selected
+        customEquipmentHidden.value = "";
+        document.querySelectorAll('input[name="customEquipmentRadios"]').forEach(r => r.checked = false);
+        customEquipmentFields.classList.add("hidden");
+        customEquipmentContainer.innerHTML = "";
+        customEquipmentCount = 0;
       }
 
       const fullGlass = fullCoverageGlassHidden.value;
@@ -1143,6 +1146,12 @@ togglePolicyCoverages();
         document.querySelectorAll(
           'input[name="enhancedLossSettlementRadios"]'
         ).forEach(r => r.checked = false);
+
+        // Also clear Vehicle leased when enhanced loss not active
+        vehicleLeasedHidden.value = "";
+        document.querySelectorAll(
+          'input[name="vehicleLeasedRadios"]'
+        ).forEach(r => r.checked = false);
       }
 
       if (enhancedLossSettlementHidden.value === "Y") {
@@ -1150,13 +1159,7 @@ togglePolicyCoverages();
         vehicleLeasedHidden.required = true;
       } else {
         vehicleLeasedField.classList.add("hidden");
-
         vehicleLeasedHidden.required = false;
-        vehicleLeasedHidden.value = "";
-
-        document.querySelectorAll(
-          'input[name="vehicleLeasedRadios"]'
-        ).forEach(r => r.checked = false);
       }
 
       toggleLeaseDetailsSection();
@@ -1208,25 +1211,32 @@ togglePolicyCoverages();
         { radioGroupName: "requestTypeRadios", label: "Select the Request Type:" },
         { id: "00NU7000005zuX3", label: "Policy Number", type: "policy" },
         { id: "00NU7000005zuLl", label: "Effective Date (MM/DD/YYYY)", type: "date" },
-        { radioGroupName: "fullCoverageGlassRadios", label: "Full Coverage Glass" },
         { id: "00NU7000007EGYk", label: "What is the Model Year?", type: "year" },
         { id: "00NU7000006Knh3", label: "VIN Number of New Vehicle" },
         { radioGroupName: "vehicleBusinessRadios", label: "Is the vehicle used for business?" },
         { radioGroupName: "acquireVehicleRadios", label: "Did the client acquire this vehicle within the last 12 months?" },
         { radioGroupName: "arizonaGarageRadios", label: "Is this vehicle garaged at the Arizona Residence Address?" },
-        { radioGroupName: "autoLoanLeaseRadios", label: "Auto Loan / Lease Coverage" },
+        { radioGroupName: "autoLoanLeaseRadios", label: "Auto Loan / Lease Coverage" }
       ];
-      // Only require Custom Equipment when OTC is selected
-if (otherThanCollisionSelect && otherThanCollisionSelect.value) {
-  fields.push({ radioGroupName: "customEquipmentRadios", label: "Custom Equipment (other than caps, covers and bedliners?)" });
-}
 
-// Only require Vehicle Leased when Enhanced Loss is Y
-if (enhancedLossSettlementHidden.value === "Y") {
-  fields.push({ radioGroupName: "vehicleLeasedRadios", label: "Is this vehicle leased?" });
-}
       const requestType = requestHiddenSelect.value;
       const autoLoanLease = autoLoanLeaseHidden.value;
+      const otc = otherThanCollisionSelect ? otherThanCollisionSelect.value : "";
+      const enhancedLoss = enhancedLossSettlementHidden.value;
+
+      // Only require Full Coverage Glass & Custom Equipment when OTC is selected
+      if (otc) {
+        fields.push({ radioGroupName: "fullCoverageGlassRadios", label: "Full Coverage Glass" });
+        fields.push({
+          radioGroupName: "customEquipmentRadios",
+          label: "Custom Equipment (other than caps, covers and bedliners?)"
+        });
+      }
+
+      // Only require Vehicle leased when Enhanced Loss is Y
+      if (enhancedLoss === "Y") {
+        fields.push({ radioGroupName: "vehicleLeasedRadios", label: "Is this vehicle leased?" });
+      }
 
       if (requestType === "N") {
         fields.push({
@@ -1348,38 +1358,42 @@ if (enhancedLossSettlementHidden.value === "Y") {
           "Is_this_a_quote_or_a_change_request": "Is_this_a_quote_or_a_change_request",
           "Date": "Effective_Date",
           "email": "Email",
+
           "00NU7000007EGYk": "Vehicle_Year",
           "00NU7000006Knh3": "VIN_number_2",
+
           "00NU7000009O2Uv": "Is_the_vehicle_used_for_business",
           "00NU7000009O4V7": "Did_the_client_acquire_vehicle",
           "00NU7000009O2zZ": "Is_this_vehicle_garaged_at_Arizona_Add",
-          "00NU7000007ALC1": "Other_than_Collision",
-          "fullCoverageGlass": "Full_Safety_Glass",
-          "00NU7000006Ne7l": "00NU7000006Ne7l",
+
+          "00NU7000007ALC1": "Other_than_Collision_Deductible",
+          "fullCoverageGlassHidden": "Full_Coverage_Glass",
+          "00NU7000006Ne7l": "Collision_Deductible",
           "00NU7000006Nf8f": "Auto_Loan_Lease_Coverage",
-          "00NU7000008Adt7": "Transportation_Expense",
+          "00NU7000008Adt7": "Transportation_Expense_Optional",
           "00NU7000009NNA1": "Custom_Equipment_caps_covers_bedliners",
           "00NU7000009NOis": "Car_Damage_Enhanced_Loss_Settlement",
+
           "00NU7000009O5B3": "Vehicle_is_titled_in_the_name_of",
-          "00NU7000009O5Cf": "vehicle_Leased_Financed_Date",
+          "00NU7000009O5Cf": "What_date_was_the_vehicle_Leased_Financed_to_insured",
           "00NU7000009O5Ft": "PreviousLoanCarryOver",
           "00NU7000009O5Nx": "PriorCarrierProvidedLoan",
           "00NU7000006OUCn": "Interest_Type",
-          "00NU70000074ACr": "loanNumber_1",
-          "00NU70000074A4n": "name_1",
-          "00NU70000074APl": "name_2",
-          "00NU7000007QpPR": "Lienholder_Address_1",
-          "00NU7000007QpUH": "Lienholder_Address_2",
+          "00NU70000074ACr": "Loan_Number",
+          "00NU70000074A4n": "Name_1",
+          "00NU70000074APl": "Name_2",
+          "00NU7000007QpPR": "Street_Address_1",
+          "00NU7000007QpUH": "Street_Address_2",
           "00NU7000005zvUj": "City",
           "00NU7000005zvWL": "State",
-          "00NU7000006cbfp": "Interest_Zip_Code"
+          "00NU7000006cbfp": "ZIP_Code"
         };
 
         fieldName = fieldMapping[fieldName] || fieldName;
 
         if (fieldName === "Effective_Date" && element.value) {
           formData[fieldName] = formatDateForJSON(element.value);
-        } else if (fieldName === "vehicle_Leased_Financed_Date" && element.value) {
+        } else if (fieldName === "What_date_was_the_vehicle_Leased_Financed_to_insured" && element.value) {
           formData[fieldName] = formatDateForJSON(element.value);
         } else {
           formData[fieldName] = element.value || "";
@@ -1562,6 +1576,13 @@ if (enhancedLossSettlementHidden.value === "Y") {
     syncVehicleLeased();
     syncPreviousLoanCarryOver();
     syncPriorCarrierProvidedLoan();
+
+    // Reset hidden coverage values before first toggle
+    fullCoverageGlassHidden.value = "";
+    enhancedLossSettlementHidden.value = "";
+    vehicleLeasedHidden.value = "";
+    customEquipmentHidden.value = "";
+
     togglePolicyCoverages();
 
     reviewBtn.addEventListener("click", () => {
