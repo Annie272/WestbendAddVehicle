@@ -1520,18 +1520,22 @@ if (zipInput) {
           if (!validateYear(el.value.trim())) missing.push(field.label);
         } else if (field.type === "policy") {
           if (!el.value.trim()) missing.push(field.label);
-        } else if (field.id === "00NU7000006cbfp") {
-      // ZIP Code special validation
-      const value = el.value.trim();
-      if (!value || !isValidZip(value)) {
+       } else if (field.id === "00NU7000006cbfp") {
+    const value = el.value.trim();
+
+    if (!value || !isValidZip(value)) {
         missing.push(field.label);
+
         zipError.classList.remove("hidden");
         el.classList.add("border-red-500");
-      } else {
+
+        // Clear invalid ZIP so it is not submitted
+        el.value = "";
+    } else {
         zipError.classList.add("hidden");
         el.classList.remove("border-red-500");
-      }
-        } else if (field.type === "customEquip") {
+    }
+} else if (field.type === "customEquip") {
           if (!el.value.trim()) missing.push(field.label);
         } else {
           if (!el.value.trim()) missing.push(field.label);
