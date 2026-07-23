@@ -605,6 +605,9 @@
     </label>
     <input id="00NU7000006cbfp" maxlength="30" name="Interest_Zip_Code__c" size="20" type="text"
       class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" required />
+       <p id="zipError" class="mt-1 text-sm text-red-600 hidden">
+    Please enter a valid ZIP Code (12345 or 12345-6789).
+  </p>
   </div>
 </section>
 
@@ -701,6 +704,52 @@
     const customEquipmentContainer = document.getElementById("customEquipmentContainer");
     const addCustomEquipmentBtn = document.getElementById("addCustomEquipmentBtn");
 
+    const zipInput = document.getElementById("00NU7000006cbfp");
+const zipError = document.getElementById("zipError");
+
+function isValidZip(value) {
+  // 5 digits or 5 digits + hyphen + 4 digits [web:109][web:112]
+  const zipRegex = /^\d{5}(-\d{4})?$/;
+  return zipRegex.test(value);
+}
+
+if (zipInput) {
+  // Auto-format as digits with optional hyphen at position 5
+  zipInput.addEventListener("input", () => {
+    // Remove non-digits and hyphen
+    let raw = zipInput.value.replace(/[^0-9-]/g, "");
+
+    // Remove all hyphens, we will re-insert correctly
+    raw = raw.replace(/-/g, "");
+
+    // Limit to max 9 digits (ZIP+4)
+    raw = raw.slice(0, 9);
+
+    if (raw.length > 5) {
+      zipInput.value = raw.slice(0, 5) + "-" + raw.slice(5);
+    } else {
+      zipInput.value = raw;
+    }
+
+    // Live error clear when format becomes valid
+    if (isValidZip(zipInput.value.trim())) {
+      zipError.classList.add("hidden");
+      zipInput.classList.remove("border-red-500");
+    }
+  });
+
+  // Validate on blur
+  zipInput.addEventListener("blur", () => {
+    const value = zipInput.value.trim();
+    if (!isValidZip(value)) {
+      zipError.classList.remove("hidden");
+      zipInput.classList.add("border-red-500");
+    } else {
+      zipError.classList.add("hidden");
+      zipInput.classList.remove("border-red-500");
+    }
+  });
+}
     const otherThanCollisionSelect = document.getElementById("00NU7000007ALC1");
     const fullCoverageGlassSection =
       document.querySelector('input[name="fullCoverageGlassRadios"]').closest(".mb-4");
@@ -1384,29 +1433,44 @@
           "00NU7000007QpUH": "Street_Address_2",
           "00NU7000005zvUj": "City",
           "00NU7000005zvWL": "State",
-          "00NU7000006cbfp": "ZIP_Code"
+          "00NU7000006cbfp": "ZIP_Code",
+          "vehicle_Leased_Financed_Date": "vehicle_Leased_Financed_Date"
         };
 
         fieldName = fieldMapping[fieldName] || fieldName;
 
         if (fieldName === "Effective_Date" && element.value) {
           formData[fieldName] = formatDateForJSON(element.value);
-        } else if (fieldName === "What_date_was_the_vehicle_Leased_Financed_to_insured" && element.value) {
+        } else if (fieldName === "vehicle_Leased_Financed_Date" && element.value) {
           formData[fieldName] = formatDateForJSON(element.value);
         } else {
           formData[fieldName] = element.value || "";
         }
       });
 
-      for (let i = 1; i <= customEquipmentCount; i++) {
-        const valueEl = document.getElementById(`value_${i}`);
-        const descEl = document.getElementById(`description_${i}`);
-        const oemEl = document.querySelector(`.oem-installed-select[data-index="${i}"]`);
+    for (let i = 1; i <= customEquipmentCount; i++) {
+  const valueEl = document.getElementById(`value_${i}`);
+  const descEl = document.getElementById(`description_${i}`);
+  const oemEl = document.querySelector(`.oem-installed-select[data-index="${i}"]`);
 
-        if (valueEl) formData[`Value_of_the_custom_equipment_${i}`] = valueEl.value || "";
-        if (descEl) formData[`Description_of_the_custom_equipment_${i}`] = descEl.value || "";
-        if (oemEl) formData[`Was_the_custom_equipment_OEM_installed_${i}`] = oemEl.value || "";
-      }
+  // Base key names (no index) for the first custom equipment
+  const baseValueKey = "Value_of_the_custom_equipment";
+  const baseDescKey = "Description_of_the_custom_equipment";
+  const baseOemKey = "Was_the_custom_equipment_OEM_installed";
+
+  if (i === 1) {
+    // First custom equipment: no numeric suffix
+    if (valueEl) formData[baseValueKey] = valueEl.value || "";
+    if (descEl) formData[baseDescKey] = descEl.value || "";
+    if (oemEl) formData[baseOemKey] = oemEl.value || "";
+  } else {
+    // Subsequent custom equipment: use _2, _3, _4...
+    const suffix = `_${i}`;
+    if (valueEl) formData[baseValueKey + suffix] = valueEl.value || "";
+    if (descEl) formData[baseDescKey + suffix] = descEl.value || "";
+    if (oemEl) formData[baseOemKey + suffix] = oemEl.value || "";
+  }
+}
 
       return JSON.stringify(formData, null, 2);
     }
@@ -1456,6 +1520,17 @@
           if (!validateYear(el.value.trim())) missing.push(field.label);
         } else if (field.type === "policy") {
           if (!el.value.trim()) missing.push(field.label);
+        } else if (field.id === "00NU7000006cbfp") {
+      // ZIP Code special validation
+      const value = el.value.trim();
+      if (!value || !isValidZip(value)) {
+        missing.push(field.label);
+        zipError.classList.remove("hidden");
+        el.classList.add("border-red-500");
+      } else {
+        zipError.classList.add("hidden");
+        el.classList.remove("border-red-500");
+      }
         } else if (field.type === "customEquip") {
           if (!el.value.trim()) missing.push(field.label);
         } else {
